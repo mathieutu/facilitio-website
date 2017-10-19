@@ -68,4 +68,41 @@ http://localhost:8000
 ```
 
 To create compressed, production-ready assets, run `npm run build`.
-# duckcreek-client
+
+## Deploy on Heroku
+
+Heroku now has a static buildpack in development to handle this (see https://github.com/heroku/heroku-buildpack-static)
+Create a `static.json` file to use the files from dist/ with .html suffix and to re-route all calls back to the SPA
+
+```json
+{
+  "root": "dist/",
+  "clean_urls": true,
+  "routes": {
+      "/**": "index.html"
+  }
+}
+```
+
+Extend package.json scripts to ensure dist/ directory is built, for example
+```json
+{
+    "scripts": {
+      "postinstall": "npm run build"
+    }
+}
+```
+
+So that dev dependencies from package.json get installed
+```bash
+heroku config:set NPM_CONFIG_PRODUCTION=false
+```
+
+Multiple build packs so you can build and deploy
+
+```bash
+heroku buildpacks:add heroku/nodejs
+heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static.git
+```
+
+Your procfile can be empty in this case.
