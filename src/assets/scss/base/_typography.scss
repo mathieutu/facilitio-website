@@ -1,0 +1,60 @@
+$heading-styles-fz: (
+  small: (
+    'h1': ('font-size': 30),
+    'h2': ('font-size': 25),
+    'h3': ('font-size': 18)
+  ),
+  medium: (
+    'h1': ('font-size': 45),
+    'h2': ('font-size': 25),
+    'h3': ('font-size': 20)
+  )
+);
+
+$header-styles-extend: (
+  'h1': (
+    font-weight: bold
+  ),
+  'h2': (
+    color: $primary-color,
+    font-weight: 600
+  ),
+  'h3': (
+    font-weight: 600
+  )
+);
+
+.heading {
+  @each $breakpoint, $headings in $heading-styles-fz {
+
+    @include breakpoint($breakpoint) {
+
+      @each $heading, $heading-def in $headings {
+
+        &.#{$heading} {
+          $font-size: rem-calc(map-get($heading-def, font-size));
+
+          font-size: $font-size;
+
+          @include line-height($font-size);
+
+          @if $breakpoint == small {
+            $heading-extend: map-get($header-styles-extend, $heading);
+
+            @each $attribute, $value in $heading-extend {
+              #{ $attribute }: $value;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.--alt-white {
+    color: $white;
+  }
+
+  &.--alt-margin {
+    margin: 0;
+  }
+}

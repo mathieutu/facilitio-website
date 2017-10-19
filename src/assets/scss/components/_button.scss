@@ -1,0 +1,41 @@
+@mixin button-style (
+  $background: $button-background,
+  $background-hover: $button-background-hover,
+  $color: $button-color,
+  $background-hover-lightness: $button-background-hover-lightness
+) {
+  @if $color == auto {
+    $color: color-pick-contrast($background, ($button-color, $button-color-alt));
+  }
+
+  @if $background-hover == auto {
+    $background-hover: scale-color($background, $lightness: $background-hover-lightness);
+  }
+
+  background-color: $background;
+  background: linear-gradient(240.68deg, $background 0%, lighten($background, 5%) 48.17%, lighten($background, 10%) 100%);
+  color: $color;
+
+  &:hover, &:focus {
+    background: linear-gradient(240.68deg, $background 0%, lighten($background, 5%) 48.17%, lighten($background, 4%) 100%);
+    color: $color;
+  }
+}
+
+
+.button {
+  font-weight: bold;
+
+  @include transition;
+
+  text-shadow: map-get($global-shadow, text);
+
+  // Colors
+  @each $name, $color in $button-palette {
+    @if $button-fill != hollow {
+      &.#{$name} {
+        @include button-style($color, auto, auto);
+      }
+    }
+  }
+}

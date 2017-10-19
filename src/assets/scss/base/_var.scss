@@ -1,0 +1,44 @@
+$global-shadow: (
+  default: 0 5px 30px 2px rgba($black, .08),
+  text: 1px 1px 1px rgba($black, .4)
+);
+
+$box-padding: (
+  xtiny: rem-calc(5px),
+  tiny: rem-calc(10px),
+  small: rem-calc(15px),
+  default: rem-calc(20px),
+  medium: rem-calc(30px),
+  large: rem-calc(50px),
+  xlarge: rem-calc(60px)
+);
+
+$box-margin: $box-padding;
+
+// TRANSITION
+// ---------
+
+$global-transition-prop: all;
+$global-transition-duration: 400ms;
+$global-transition-timing: cubic-bezier(.9,.07,.08,.935);
+
+@mixin transition() {
+  transition-property: $global-transition-prop;
+  transition-duration: 500ms;
+  transition-timing-function: $global-transition-timing;
+}
+
+// TYPOGRAPHY
+// ---------
+
+$font-size: (
+  tiny: rem-calc(12px),
+  small: rem-calc(14px),
+  default: 1rem,
+  large: rem-calc(20px),
+);
+
+@mixin line-height($fz) {
+	line-height: $fz; //fallback for old browsers
+	line-height: (1.2 * $fz);
+}

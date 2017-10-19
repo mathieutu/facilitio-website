@@ -1,0 +1,86 @@
+.section-hero {
+  position: relative;
+  padding-top: map-get($box-padding, medium);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+
+  @include breakpoint(medium) {
+    padding-top: rem-calc(80px);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(355.97deg, rgba(42,97,192,0.94) 0%, rgba(80,116,177,0.3) 90%);
+  }
+
+  .grid-container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* FORM */
+
+.hero-form {
+  position: relative;
+  bottom: - $global-margin;
+  margin-top: rem-calc(80px);
+  padding: rem-calc(5px);
+  border-radius: $global-radius;
+  background-color: $white;
+  box-shadow: map-get($global-shadow, default);
+
+  @include breakpoint(large) {
+    width: 60%;
+  }
+}
+
+.hero-form .input {
+  margin: 0;
+  padding-right: $global-padding;
+  padding-left: $global-padding;
+  border: 0;
+  box-shadow: 0;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.hero-form .button {
+  margin: 0;
+}
+
+/* HEADLINE */
+
+.hero-head {
+  color: $white;
+  letter-spacing: 1px;
+  text-shadow: map-get($global-shadow, text);
+
+
+  @include breakpoint(medium) {
+    width: 60%;
+  }
+}
+
+.hero-headline {
+  margin-bottom: map-get($box-margin, medium);
+}
+
+.hero-desc {
+  font-size: map-get($font-size, large);
+}
