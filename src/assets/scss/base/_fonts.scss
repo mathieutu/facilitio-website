@@ -21,3 +21,14 @@ $base-fonts: '../fonts/';
 	font-weight: normal;
 	font-style: normal;
 }
+
+@font-face {
+	font-family: 'HK Grotesk';
+	src: url('#{$base-fonts}HKGrotesk-SemiBold.eot');
+	src: url('#{$base-fonts}HKGrotesk-SemiBold.eot?#iefix') format('embedded-opentype'),
+		url('#{$base-fonts}HKGrotesk-SemiBold.woff') format('woff'),
+		url('#{$base-fonts}HKGrotesk-SemiBold.ttf') format('truetype'),
+		url('#{$base-fonts}HKGrotesk-SemiBold.svg#HKGrotesk-SemiBold') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}

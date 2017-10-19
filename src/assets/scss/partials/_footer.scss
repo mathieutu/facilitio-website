@@ -1,0 +1,6 @@
+.footer {
+  padding-top: map-get($box-padding, medium);
+  padding-bottom: map-get($box-padding, medium);
+  background-color: $primary-color;
+  color: $white;
+}

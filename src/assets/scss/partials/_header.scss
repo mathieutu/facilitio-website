@@ -1,8 +1,14 @@
 .header {
   position: relative;
   z-index: 1;
-  padding: $global-padding;
+  padding-top: map-get($box-padding, default);
+  padding-bottom: calc(#{map-get($box-padding, default)} + #{rem-calc(2px)});
   box-shadow: map-get($global-shadow, default);
+
+  @include breakpoint(medium) {
+    padding-top: map-get($box-padding, small);
+    padding-bottom: calc(#{map-get($box-padding, small)} + #{rem-calc(2px)});
+  }
 
   &:after {
     content: '';
@@ -14,5 +20,15 @@
     height: 2px;
     background-color: $primary-color;
     background-image: linear-gradient(to right, #196dff 0%,#196dff 22%,#5e99ff 22%,#5e99ff 42%,#115fe5 42%,#115fe5 63%,#1697ff 63%,#115fe5 63%,#1697ff 63%,#1697ff 80%,#498bff 80%,#498bff 100%);
+  }
+}
+
+.logo {
+  display: block;
+  height: rem-calc(20px);
+
+  img {
+    max-height: 100%;
+    vertical-align: top;
   }
 }

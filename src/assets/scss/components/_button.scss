@@ -13,11 +13,12 @@
   }
 
   background-color: $background;
-  background: linear-gradient(240.68deg, $background 0%, lighten($background, 5%) 48.17%, lighten($background, 10%) 100%);
+  background-image: linear-gradient(240.68deg, transparent 0%, lighten($background, 4%) 45.17%, lighten($background, 12%) 100%);
   color: $color;
 
   &:hover, &:focus {
-    background: linear-gradient(240.68deg, $background 0%, lighten($background, 5%) 48.17%, lighten($background, 4%) 100%);
+    background-color: $background-hover;
+    background-image: linear-gradient(240.68deg, transparent 0%, lighten($background, 5%) 45.17%, lighten($background, 12%) 100%);
     color: $color;
   }
 }
@@ -37,5 +38,9 @@
         @include button-style($color, auto, auto);
       }
     }
+  }
+
+  &:not(.hollow) {
+    border: 0;
   }
 }
