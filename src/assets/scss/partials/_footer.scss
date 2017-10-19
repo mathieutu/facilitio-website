@@ -1,6 +1,39 @@
 .footer {
-  padding-top: map-get($box-padding, medium);
-  padding-bottom: map-get($box-padding, medium);
+  position: relative;
+  padding-top: map-get($box-padding, large);
+  padding-bottom: map-get($box-padding, large);
   background-color: $primary-color;
   color: $white;
+}
+
+.footer-desc {
+  color: $medium-primary;
+  letter-spacing: 1px;
+  font-size: map-get($font-size, large);
+  font-weight: 600;
+}
+
+.footer-form {
+  margin-top: map-get($box-margin, medium);
+}
+
+.footer-form input {
+
+  margin-right: -5px;
+
+  &,
+  &::placeholder {
+    color: $medium-primary;
+  }
+
+  &:focus {
+    border-color: $light-primary;
+  }
+
+  &,
+  &:focus,
+  &:active {
+    border: 3px solid $medium-primary;
+    background-color: transparent;
+  }
 }

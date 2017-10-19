@@ -1,0 +1,12 @@
+.input-group .button,
+.input-group input {
+  margin: 0;
+}
+
+.input-group input {
+  @include xy-cell-base(auto);
+  height: auto;
+}
+.input-group .button {
+  @include xy-cell-base(shrink);
+}
