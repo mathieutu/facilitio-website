@@ -1,7 +1,7 @@
 .section-benefits {
   position: relative;
   padding-top: map-get($box-padding, large);
-  padding-bottom: calc(#{map-get($box-padding, large)} + #{map-get($box-padding, default)});
+  padding-bottom: calc(#{map-get($box-padding, large)});
 
   &::after {
     content: '';
@@ -21,4 +21,13 @@
 
 .benefit-icon {
   margin-bottom: map-get($box-margin, default);
+}
+
+.heading.benefits-title {
+  display: block;
+  margin-bottom: map-get($box-margin, large);
+
+  strong {
+    color: $primary-color;
+  }
 }

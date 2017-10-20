@@ -64,17 +64,21 @@
   height: rem-calc(100px);
   border-radius: 100%;
   background-color: $white;
+  color: $primary-color;
+  font-size: 65px;
+  font-weight: bold;
   line-height: rem-calc(100px);
   text-align: center;
-  text-shadow: 4px 4px 0px lighten($medium-primary, 6%);
-  font-weight: bold;
-  font-size: 65px;
-  color: $primary-color;
+  text-shadow: 4px 4px 0 lighten($medium-primary, 6%);
+
+  @include breakpoint(small only) {
+    margin-left: auto;
+  }
 
   &::before {
     content: '#';
-    font-size: 40px;
     color: $black;
+    font-size: 40px;
   }
 
   &.v-right {

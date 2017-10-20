@@ -1,9 +1,13 @@
 .footer {
   position: relative;
   padding-top: map-get($box-padding, large);
-  padding-bottom: map-get($box-padding, large);
+  padding-bottom: map-get($box-padding, medium);
   background-color: $primary-color;
   color: $white;
+
+  @include breakpoint(medium) {
+    padding-bottom: map-get($box-padding, large);
+  }
 }
 
 .footer-desc {

@@ -1,0 +1,23 @@
+.row-multiple {
+
+  &:not(.--last) {
+    > * {
+      margin-bottom: map-get($box-margin, small);
+
+      @include breakpoint(large) {
+        margin-bottom: map-get($box-margin, default);
+      }
+    }
+  }
+
+
+  &.--last {
+    > *:not(:last-child) {
+      margin-bottom: map-get($box-margin, small);
+
+      @include breakpoint(large) {
+        margin-bottom: map-get($box-margin, default);
+      }
+    }
+  }
+}
